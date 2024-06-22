@@ -57,4 +57,4 @@ jobs:
           name: ${{ matrix.services }}
           path: ${{ github.workspace }}/target
       - name: Build docker image
-        run: docker build -f ./fishsnap-adapter/${{ matrix.services }}/Dockerfile
+        run: docker build -f ./fishsnap-adapter/${{ matrix.services }}/Dockerfile . -t fishsnap-${{ matrix.services }}:$(date +%s)
